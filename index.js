@@ -37,4 +37,12 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('chat:typing', data)
     });
 
+    socket.on('new_request', function(data){
+        io.sockets.emit('new_request', data);
+    })
+
+    socket.on('accept_request', function(data){
+        io.sockets.emit('accept_request', data);
+    })
+
 })
