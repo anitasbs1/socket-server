@@ -45,4 +45,8 @@ io.on('connection', (socket) => {
         io.sockets.emit('accept_request', data);
     })
 
+    socket.on('cancel_requestI', function(data){
+        io.emit('cancel_requestI', data);
+    })
+
 })
